@@ -1,0 +1,9 @@
+config:
+  target: "https://barbara2-451412.ew.r.appspot.com/"
+  phases:
+    - duration: 60  # Teste de 60 segundos
+      arrivalRate: 10  # 10 utilizadores por segundo
+scenarios:
+  - flow:
+      - get:
+          url: "/"

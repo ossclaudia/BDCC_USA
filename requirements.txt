@@ -1,0 +1,8 @@
+google-cloud-bigquery==3.10.0
+Flask==3.0.0
+gunicorn
+appengine-python-standard>=0.2.3
+Werkzeug==3.0.3
+functions-framework==3.5.0
+functions-framework
+google-cloud-datastore
