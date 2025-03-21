@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Gender</th>
+            <th>Date of Birth</th>
+            <th>Image URL</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{ result[0] }}</td>
+            <td>{{ result[1] }}</td>
+            <td>{{ result[2] }}</td>
+            <td><a href="{{ result[3] }}" target="_blank" download="profile_pic">View profile picture</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
