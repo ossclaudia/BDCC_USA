@@ -11,9 +11,9 @@ from gcf import update_statistics
 app = Flask(__name__)
 app.wsgi_app = wrap_wsgi_app(app.wsgi_app, use_deferred=True)
 
-client = bigquery.Client()
+client = bigquery.Client(location="us")
 
-PROJECT_ID = "barbara2-451412"
+PROJECT_ID = "projetousa"
 DATASET_ID = "MIMIC"
 TABLE_REF = f"{PROJECT_ID}.{DATASET_ID}"
 TABLE_PATIENTS = "PATIENTS"
@@ -53,7 +53,7 @@ def get_patient(subject_id):
             gender,
             dob,
             image_url
-        FROM `barbara2-451412.MIMIC.{TABLE_PATIENTS}`
+        FROM `projetousa.MIMIC.{TABLE_PATIENTS}`
         WHERE subject_id = @subject_id
         """
     job_config = bigquery.QueryJobConfig(
@@ -270,8 +270,8 @@ def create_answer():
 def questions():
     query_job = client.query(
         f"""
-        SELECT * FROM `barbara2-451412.MIMIC.QUESTIONS` AS questions 
-        LEFT JOIN `barbara2-451412.MIMIC.ANSWERS` as answers 
+        SELECT * FROM `projetousa.MIMIC.QUESTIONS` AS questions 
+        LEFT JOIN `projetousa.MIMIC.ANSWERS` as answers 
         ON questions.ID = answers.Replying_To
         """
     )
@@ -453,7 +453,7 @@ def get_longest_waiting_patients():
 #---------------------------------------------------------------------------------------------------
 # GOOGLE CLOUD FUNCTION 
 
-CLOUD_FUNCTION_URL = "https://europe-southwest1-barbara2-451412.cloudfunctions.net/update_statistics"
+CLOUD_FUNCTION_URL = "https://europe-southwest1-projetousa.cloudfunctions.net/update_statistics"
 
 @app.route("/update_stats")
 def update_stats():

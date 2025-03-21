@@ -7,7 +7,7 @@ import os
 bq_client = bigquery.Client()
 datastore_client = datastore.Client()
 
-PROJECT_ID = "barbara2-451412"
+PROJECT_ID = "projetousa"
 DATASET_ID = "MIMIC"
 TABLE_REF = f"{PROJECT_ID}.{DATASET_ID}"
 TABLE_ADMISSIONS = "ADMISSIONS"

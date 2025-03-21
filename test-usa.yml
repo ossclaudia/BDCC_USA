@@ -1,5 +1,5 @@
 config:
-  target: "https://barbara2-451412.usa.r.appspot.com/"
+  target: "https://projetousa.uc.r.appspot.com/"
   phases:
     - duration: 60  # Teste de 60 segundos
       arrivalRate: 10  # 10 utilizadores por segundo

@@ -3,7 +3,7 @@ app_engine_apis: true
 entrypoint: gunicorn -b :$PORT main:app
 
 env_variables:
-  GOOGLE_CLOUD_PROJECT: "barbara2-451412"
+  GOOGLE_CLOUD_PROJECT: "Projeto_USA"
 
 handlers:
 # This configures Google App Engine to serve the files in the app's static
