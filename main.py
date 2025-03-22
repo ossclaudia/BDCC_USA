@@ -453,7 +453,7 @@ def get_longest_waiting_patients():
 #---------------------------------------------------------------------------------------------------
 # GOOGLE CLOUD FUNCTION 
 
-CLOUD_FUNCTION_URL = "https://europe-southwest1-projetousa.cloudfunctions.net/update_statistics"
+CLOUD_FUNCTION_URL = "https://us-west4-projetousa.cloudfunctions.net/update_statistics"
 
 @app.route("/update_stats")
 def update_stats():

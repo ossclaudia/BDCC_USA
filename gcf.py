@@ -58,13 +58,12 @@ def update_statistics(request):
 
 
 def store_statistics(stats):
-    print("Tentando guardar estatísticas no Datastore:", stats)  # DEBUG
 
     try:
         entity = datastore.Entity(key=datastore_client.key("statistics"))
         entity.update(stats)
         datastore_client.put(entity)
 
-        print(" Estatísticas guardadas com sucesso!")  # DEBUG
+        print(" Estatísticas guardadas com sucesso!")  
     except Exception as e:
-        print("Erro ao guardar estatísticas no Datastore:", str(e))  # DEBUG
+        print("Erro ao guardar estatísticas no Datastore:", str(e))  
